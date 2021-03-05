@@ -1,0 +1,15 @@
+Use Case 3: User wants to skateboard on the smoothest/best lit road
+Subject Area: Transportation
+Actor(s): Skater/Scooter
+Trigger: Skater wants to get from point A to Point B
+Precondition 1: Good weather conditions. 
+
+Basic Flow: This scenario describes the situation where the skater desires a safe, rideable path for causal physical activities.
+Skater looks through rated paths on the app.
+Skater chooses preferred route
+Skater opens route in preferred navigation app
+Skater follows route to her destination
+
+Termination outcome: Skater arrives at destination
+
+Alternative Flow: Skater uses google maps and a flashlight to see the ground in dark areas, and toughens up for the bumpy roads. 
