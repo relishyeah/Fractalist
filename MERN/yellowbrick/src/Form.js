@@ -1,11 +1,14 @@
 import { Component } from "react";
+import axios from 'axios'
 
 class Form extends Component{
     constructor(props) {
         super(props);
         
         this.state = {
-            query: ''
+            query: '',
+            weather : '',
+            temp: ''
         }
     }
 
@@ -13,9 +16,15 @@ class Form extends Component{
         this.setState({
             query : event.target.value
         } )
+
     }
     handleSubmit = (event) =>{
-        alert(`${this.state.query}`)
+        var url = "http://localhost:3000/?search="+ encodeURIComponent(this.state.query.trim())
+        
+        axios.get(url,{"Access-Control-Allow-Origin":"*"}).then(response => {
+            this.setState({weather:response.data.weather,
+            temp:response.data.temp});
+        });
         event.preventDefault()
     }
     
@@ -32,6 +41,12 @@ class Form extends Component{
                 </div>
                 <div>
                     <button type="submit">Search</button>
+                </div>
+                <div>
+                    {this.state.weather}
+                </div>
+                <div>
+                    {this.state.temp}
                 </div>
             </form>
         )
