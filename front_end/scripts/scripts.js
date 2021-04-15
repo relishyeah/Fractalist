@@ -1,0 +1,1 @@
+// Parent JavaScript file for use with spotify cover generator site

@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Begin theme styles
+*/
+
+:root {
+  --font-base: "Rubik", sans-serif;
+  --font-display: "Roboto", sans-serif;
+  --color-dark: #0b0809;
+  --color-light: #e1e5ea;
+  --color-primary: ;
+  --color-secondary: ;
+  --color-tertiary: ;
+  --color-quaternary: ;
+  --size-base: 1rem;
+  --size-300: calc(var(--size-base) * 0.75);
+  --size-400: calc(var(--size-base) * 1);
+  --size-500: calc(var(--size-base) * 1.33);
+  --size-600: calc(var(--size-base) * 1.77);
+  --size-700: calc(var(--size-base) * 2.36);
+  --size-800: calc(var(--size-base) * 3.15);
+  --size-900: calc(var(--size-base) * 4.2);
+  --size-major: calc(var(--size-base) * 5.6);
+  --flow-space: var(--size-600);
+  --vertical-padding: var(--size-900);
+  --border-width-1: var(--size-400);
+  --border-width-2: 3px;
+  --underline-thin: 2px;
+  --underline-thick: 5px;
+}
+
+body {
+  background: var(--color-light);
+  color: var(--color-dark);
+  line-height: 1.5;
+  font-size: var(--size-400);
+  font-family: var(--font-base);
+}
+
+/* h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  font-family: var(--font-base);
+  line-height: 1.1;
+}
+h1::after,
+h2::after,
+h3::after,
+h4::after {
+  content: ".";
+  color: currentColor;
+  font-size: 1em;
+  line-height: 1;
+}
+
+h1 {
+  font-size: clamp(var(--size-800), calc(1rem + 16vw), var(--size-major));
+}
+
+h2 {
+  font-size: clamp(var(--size-600), calc(1rem + 4vw), var(--size-700));
+}
+
+h3 {
+  font-size: clamp(var(--size-500), calc(1rem + 2vw), var(--size-600));
+}
+
+h4 {
+  font-size: clamp(var(--size-400), calc(1rem + 1.5vw), var(--size-500));
+} */
+
+header {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+header a {
+  text-transform: uppercase;
+  padding: 1em;
+  width: 100%;
+  border: 1px solid black;
+}
+
+nav {
+  background-color: var(--color-light);
+  height: auto;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  padding: 1em;
+}
+
+p {
+  font-family: var(--font-display);
+}
+
+span {
+  width: 100px;
+  height: 100px;
+  background: red;
+  float: left;
+  clear: left;
+}
