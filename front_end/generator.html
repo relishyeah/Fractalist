@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/test.css">
   <title>Cover Generator</title>
 </head>
 <body>
@@ -29,5 +29,75 @@
       </li>
     </ul>
   </nav>
+  <main>
+    <section>
+      <h2>Your Custom Album</h2>
+      <img>
+      <h3>Customize!</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.</p>
+      <h4>Font</h4>
+      <h4>Border</h4>
+      <h4>Art</h4>
+      <h4>Color</h4>
+      <button>Download</button>
+      <button>Publish to Spotify</button>
+    </section>
+  </main>
+
+  <div id="launch-page">
+
+    <img src="./imgs/clear-green-only-64colors-2000px.png" id="fractal-background" />
+
+    <main class="clear-fix">
+      <a id="launch-fractal">
+        <div id="fractal-title">Mandelbrot Fractal</div>
+        <div id="launch-text" class="link">Launch Fractal</div>
+      </a>
+      <a
+        id="credit-line"
+        href="https://github.com/rafgraph/fractal"
+        target="_blank"
+        >Code and color algorithm by <span class="link">Rafael Pedicini</span>
+      </a>
+    </main>
+
+    <div id="launch-detailed-fractal">
+      launch higher escape time fractal -
+      <a id="448-escape-time" class="link">448</a>
+       -
+      <a id="896-escape-time" class="link">896</a>
+       -
+      <a id="1792-escape-time" class="link">1792</a>
+       - slow!
+    </div>
+  </div>
+
+  <div id="fractal-graphics">
+    <canvas id="fractal-canvas"></canvas>
+    <div id="loading-fractal">
+      <div id="loading-frac-text">
+        <div id="loading-frac-title">loading fractal...</div>
+        <div id="zoom-in-info">click to zoom in</div>
+        <div id="zoom-out-info">option-click to zoom out</div>
+        <div id="reset-info">shift-click to reset</div>
+        <div id="exit-info">esc key to exit</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="app/fractal.js">fractal</script>
+  <script type="text/javascript" src="app/app.js">app</script>
+  <script type="text/javascript">
+    (function() {
+      'use-strict';
+      function startApp(){
+        window.mandelbrotFractal.runningApp = new mandelbrotFractal.App();
+        document.removeEventListener("DOMContentLoaded", startApp);
+      }
+      document.addEventListener("DOMContentLoaded", startApp);
+    }())
+  </script>
+  
+
 </body>
 </html>

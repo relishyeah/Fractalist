@@ -53,8 +53,8 @@ body {
   --font-display: "Roboto", sans-serif;
   --color-dark: #0b0809;
   --color-light: #e1e5ea;
-  --color-primary: ;
-  --color-secondary: ;
+  --color-primary: #1DB954;
+  --color-secondary: #10E7Dc;
   --color-tertiary: ;
   --color-quaternary: ;
   --size-base: 1rem;
@@ -75,7 +75,7 @@ body {
 }
 
 body {
-  background: var(--color-light);
+  background: var(--color-secondary);
   color: var(--color-dark);
   line-height: 1.5;
   font-size: var(--size-400);
@@ -117,10 +117,14 @@ h4 {
 } */
 
 header {
-  min-height: 100vh;
   display: grid;
   place-content: center;
   text-align: center;
+}
+
+header span {
+  display: block;
+  margin: var(--vertical-padding);
 }
 
 h2 {
@@ -161,14 +165,35 @@ nav li {
   padding: 1em;
 }
 
-p {
-  font-family: var(--font-display);
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+  /* mix-blend-mode: difference; */
 }
 
-span {
+nav a:hover {
+  color: var(--color-primary);
+}
+
+
+p {
+  font-family: var(--font-display);
+  max-width: 55ch;
+}
+
+.placeholder-img {
   width: 100px;
   height: 100px;
   background: red;
   float: left;
   clear: left;
+}
+
+#about {
+  background-color: #ffe400;
+}
+
+.full-page {
+  min-height: 100vh;
+  padding-top: 5%;
 }
