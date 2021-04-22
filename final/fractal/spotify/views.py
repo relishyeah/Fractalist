@@ -5,11 +5,12 @@ from requests import Request, post
 from rest_framework import status
 from rest_framework.response import Response
 from .util import *
+import json
 
 
 class AuthURL(APIView):
     def get(self, request, fornat=None):
-        scopes = 'playlist-modify-public playlist-modify-private'
+        scopes = 'playlist-modify-public playlist-modify-private playlist-read-private'
 
         url = Request('GET', 'https://accounts.spotify.com/authorize', params={
             'scope': scopes,
@@ -56,11 +57,32 @@ class IsAuthenticated(APIView):
         return Response({'status': is_authenticated}, status=status.HTTP_200_OK)
 
 class GetPlaylists(APIView):
+    playlist_ids=[0]
     def get(self,request,format = None):
         key = self.request.session.session_key
-        endpoint = 'playlists'
+        endpoint = 'me/playlists'
         response = execute_spotify_api_request(key,endpoint)
+        num_playlists = len(response['items']) # TODO: to be used for getting playlist id for all playlists
+        self.playlist_ids[0] = response['items'][0]['id']
+        return Response(response, status = status.HTTP_200_OK)
 
-        print(response)
+class GetTracks(GetPlaylists):
+    tracks=[0]
+    def get(self,request,format = None):
+        key = self.request.session.session_key
+        playlist_id = self.playlist_ids[0]
+        endpoint = 'playlists/'+playlist_id
+        response = execute_spotify_api_request(key,endpoint)
+        self.tracks[0] = response['tracks']['items'][0]['track']['id']
+        return Response(response, status = status.HTTP_200_OK)
+
+class GetFeatures(GetTracks):
+    def get(self,request,format = None):
+        key = self.request.session.session_key
+        playlist_id = self.playlist_ids[0]
+        track_id = self.tracks[0]
+        print(track_id)
+        endpoint = 'audio-features/'+track_id
+        response = execute_spotify_api_request(key,endpoint)
 
         return Response(response, status = status.HTTP_200_OK)
