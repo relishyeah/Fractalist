@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from requests import Request, post
 from rest_framework import status
 from rest_framework.response import Response
-from .util import update_or_create_user_tokens, is_spotify_authenticated, get_user_tokens
+from .util import *
 
 
 class AuthURL(APIView):
@@ -33,7 +33,6 @@ def spotify_callback(request, format=None):
         'client_id': CLIENT_ID,
         'client_secret': CLIENT_SECRET
     }).json()
-    print(response)
 
     access_token = response.get('access_token')
     token_type = response.get('token_type')
@@ -46,7 +45,7 @@ def spotify_callback(request, format=None):
 
     update_or_create_user_tokens(
         request.session.session_key, access_token, token_type, expires_in, refresh_token)
-
+    
     return redirect('http://127.0.0.1:8000/')
 
 
@@ -55,3 +54,13 @@ class IsAuthenticated(APIView):
         is_authenticated = is_spotify_authenticated(
             self.request.session.session_key)
         return Response({'status': is_authenticated}, status=status.HTTP_200_OK)
+
+class GetPlaylists(APIView):
+    def get(self,request,format = None):
+        key = self.request.session.session_key
+        endpoint = 'playlists'
+        response = execute_spotify_api_request(key,endpoint)
+
+        print(response)
+
+        return Response(response, status = status.HTTP_200_OK)
