@@ -19,8 +19,8 @@ class AuthURL(APIView):
             'client_id': CLIENT_ID
         }).prepare().url
 
-        return Response({'url': url}, status=status.HTTP_200_OK)
-
+        #return Response({'url': url}, status=status.HTTP_200_OK)
+        return redirect(url)
 
 def spotify_callback(request, format=None):
     code = request.GET.get('code')
@@ -47,7 +47,7 @@ def spotify_callback(request, format=None):
     update_or_create_user_tokens(
         request.session.session_key, access_token, token_type, expires_in, refresh_token)
     
-    return redirect('http://127.0.0.1:8000/')
+    return redirect('http://127.0.0.1:5500/playlist/')
 
 
 class IsAuthenticated(APIView):
