@@ -51,11 +51,11 @@ body {
 :root {
   --font-base: "Rubik", sans-serif;
   --font-display: "Roboto", sans-serif;
-  --color-dark: #0b0809;
-  --color-light: #e1e5ea;
-  --color-primary: #1DB954;
-  --color-secondary: #10E7Dc;
-  --color-tertiary: ;
+  --color-dark: #0b0C10;
+  --color-light: #C5C6C7;
+  --color-primary: #66FCF1;
+  --color-secondary: #45A29E;
+  --color-tertiary: #1F2833;
   --color-quaternary: ;
   --size-base: 1rem;
   --size-300: calc(var(--size-base) * 0.75);
@@ -75,8 +75,8 @@ body {
 }
 
 body {
-  background: var(--color-secondary);
-  color: var(--color-dark);
+  background: var(--color-dark);
+  color: var(--color-light);
   line-height: 1.5;
   font-size: var(--size-400);
   font-family: var(--font-base);
@@ -98,7 +98,7 @@ h4::after {
   color: currentColor;
   font-size: 1em;
   line-height: 1;
-}
+} */
 
 h1 {
   font-size: clamp(var(--size-800), calc(1rem + 16vw), var(--size-major));
@@ -108,7 +108,7 @@ h2 {
   font-size: clamp(var(--size-600), calc(1rem + 4vw), var(--size-700));
 }
 
-h3 {
+/* h3 {
   font-size: clamp(var(--size-500), calc(1rem + 2vw), var(--size-600));
 }
 
@@ -120,6 +120,7 @@ header {
   display: grid;
   place-content: center;
   text-align: center;
+  color: var(--color-primary);
 }
 
 header span {
@@ -135,11 +136,11 @@ header a {
   text-transform: uppercase;
   padding: 1em;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid var(--color-primary);
 }
 
 nav {
-  background-color: var(--color-light);
+  background-color: var(--color-dark);
   height: auto;
   position: fixed;
   top: 0;
@@ -167,12 +168,12 @@ nav li {
 
 a {
   text-decoration: none;
-  color: var(--color-dark);
+  color: var(--color-primary);
   /* mix-blend-mode: difference; */
 }
 
-nav a:hover {
-  color: var(--color-primary);
+a:hover {
+  color: var(--color-secondary);
 }
 
 
@@ -190,7 +191,7 @@ p {
 }
 
 #about {
-  background-color: #ffe400;
+  /* background-color: #ffe400; */
 }
 
 .full-page {
