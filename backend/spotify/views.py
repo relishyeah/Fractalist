@@ -67,22 +67,25 @@ class GetPlaylists(APIView):
         return Response(response, status = status.HTTP_200_OK)
 
 class GetTracks(GetPlaylists):
-    tracks=[0]
     def get(self,request,format = None):
+        avg_valence = 0
+        avg_energy = 0
+        mode_mode = 0
         key = self.request.session.session_key
         playlist_id = self.playlist_ids[0]
-        endpoint = 'playlists/'+playlist_id
-        response = execute_spotify_api_request(key,endpoint)
-        self.tracks[0] = response['tracks']['items'][0]['track']['id']
-        return Response(response, status = status.HTTP_200_OK)
-
-class GetFeatures(GetTracks):
-    def get(self,request,format = None):
-        key = self.request.session.session_key
-        playlist_id = self.playlist_ids[0]
-        track_id = self.tracks[0]
-        print(track_id)
-        endpoint = 'audio-features/'+track_id
-        response = execute_spotify_api_request(key,endpoint)
-
-        return Response(response, status = status.HTTP_200_OK)
+        endpoint = 'playlists/'+str(playlist_id)
+        playlist_response = execute_spotify_api_request(key,endpoint)
+        num_tracks = len(playlist_response['tracks']['items'])
+        tracks=[0 for x in range(num_tracks)]
+        mode = [0 for x in range(num_tracks)]
+        for i in range(num_tracks):
+            track_id = playlist_response['tracks']['items'][i]['track']['id']
+            endpoint = 'audio-features/'+ track_id
+            response = execute_spotify_api_request(key,endpoint)
+            avg_valence+=response['valence']
+            avg_energy+=response['energy']
+            mode[i] = response['mode']
+        mode_mode = max(set(mode), key=mode.count)
+        avg_valence/=num_tracks
+        avg_energy/=num_tracks
+        return Response({'avg_valence':avg_valence, 'avg_energy':avg_energy, 'mode_mode':mode_mode}, status = status.HTTP_200_OK)
