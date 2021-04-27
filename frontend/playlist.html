@@ -33,5 +33,25 @@
       </li>
     </ul>
   </nav>
+
+  <script>
+
+    fetch('http://3.12.147.218:8000/spotify/is_authenticated')
+    .then((res) => res.json())
+    .then((data) =>{
+      if  (data.status){
+        fetch('http://3.12.147.218:8000/spotify/get_auth_url')
+    }
+      else{
+        fetch('http://3.12.147.218:8000/spotify/get_playlists').then((res) => res.json())
+    .then((data) =>{
+      console.log(data);
+    })}
+    });
+
+
+  </script>
+
+
 </body>
 </html>
