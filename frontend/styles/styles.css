@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Lato:wght@700&family=Martel:wght@700&family=Montserrat:wght@700&family=Open+Sans:wght@700&family=Permanent+Marker&family=Playfair+Display:wght@700&family=Roboto:wght@700&family=Volkhov:wght@700&family=Yeseva+One&display=swap');
+@import url("https://use.fontawesome.com/releases/v5.14.0/css/all.css");
 /*
  * [Modified] Modern CSS Reset
  * @link https://github.com/hankchizljaw/modern-css-reset
@@ -198,3 +200,47 @@ p {
   min-height: 100vh;
   padding-top: 5%;
 }
+
+/* ////// canvas /////// */
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 100px;
+}
+
+#canvas {
+  width: 300;
+  height: 300;
+  border: 1px solid red;
+  float: left;
+}
+
+select {
+	font-size: 30px;
+}
+
+.icons:before {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+#left:before {
+    content: "\f036";
+}
+
+#center:before  {
+    content: "\f037";
+}
+
+#right:before {
+    content: "\f038";
+}
+
+/* ///////////////////////////////// */
