@@ -54,7 +54,12 @@ class IsAuthenticated(APIView):
     def get(self, request, format=None):
         is_authenticated = is_spotify_authenticated(
             self.request.session.session_key)
-        return Response({'status': is_authenticated}, status=status.HTTP_200_OK)
+        return Response({'status': is_authenticated},[
+        ('Content-Type', 'application/json'),
+        ('Access-Control-Allow-Origin', '*'),
+        ('Access-Control-Allow-Headers', 'Authorization, Content-Type'),
+        ('Access-Control-Allow-Methods', 'POST'),
+      ], status=status.HTTP_200_OK)
 
 class GetPlaylists(APIView):
     playlist_ids=[0]
@@ -64,7 +69,12 @@ class GetPlaylists(APIView):
         response = execute_spotify_api_request(key,endpoint)
         num_playlists = len(response['items']) # TODO: to be used for getting playlist id for all playlists
         self.playlist_ids[0] = response['items'][0]['id']
-        return Response(response, status = status.HTTP_200_OK)
+        return Response(response, [
+        ('Content-Type', 'application/json'),
+        ('Access-Control-Allow-Origin', '*'),
+        ('Access-Control-Allow-Headers', 'Authorization, Content-Type'),
+        ('Access-Control-Allow-Methods', 'GET'),
+      ], status = status.HTTP_200_OK)
 
 class GetTracks(GetPlaylists):
     def get(self,request,format = None):
