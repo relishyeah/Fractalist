@@ -50,7 +50,7 @@
       els.launch896Fractal = document.getElementById("896-escape-time");
       els.launch1792Fractal = document.getElementById("1792-escape-time");
       els.fractalGraphics = document.getElementById("fractal-graphics");
-      els.fractalCanvas = document.getElementById("fractal-canvas");
+      els.fractalCanvas = document.getElementById("canvas");
       els.loadingFractal = document.getElementById("loading-fractal");
       els.creditLine = document.getElementById("credit-line");
     };
