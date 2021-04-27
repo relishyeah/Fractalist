@@ -8,8 +8,10 @@
   <title>Playlist Select</title>
   </head>
   <body>
-  <h1> playlist Select</h1>
-  
+  <h1> Playlist Select</h1>
+
+  <div id="root"></div>
+
   <ul>
     <li><a href="generator.html">playlist</a></li>
     <li><a href="generator.html">playlist</a></li>
@@ -19,9 +21,6 @@
   
   <nav>
     <ul>
-      <li>
-        <a href="login.html">Generatorhead
-      </li>
      <li>
         <a>How It Works</a>
       </li>
@@ -38,13 +37,13 @@
 
     fetch('http://3.12.147.218:8000/spotify/is_authenticated')
     .then((res) => res.json())
-    .then((data) =>{
-      if  (data.status){
+    .then((data) => {
+      if  (data.status) {
         fetch('http://3.12.147.218:8000/spotify/get_auth_url')
     }
       else{
         fetch('http://3.12.147.218:8000/spotify/get_playlists').then((res) => res.json())
-    .then((data) =>{
+    .then((data) => {
       console.log(data);
     })}
     });
