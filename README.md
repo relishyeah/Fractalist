@@ -1,4 +1,4 @@
-# YellowBrick
+# Fractalist
 Required Dependencies: Django RESTframework
 
 1. open command console
