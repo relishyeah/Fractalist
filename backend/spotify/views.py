@@ -48,7 +48,7 @@ def spotify_callback(request, format=None):
     update_or_create_user_tokens(
         request.session.session_key, access_token, token_type, expires_in, refresh_token)
     
-    return redirect('http://quence-dev.github.io/fractalist/playlist.html')
+    return redirect('http://127.0.0.1:5500/frontend/playlist.html')
 
 
 class IsAuthenticated(APIView):
