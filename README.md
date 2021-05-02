@@ -16,7 +16,7 @@ The project creates a fractal Spotify playlist cover based on attributes of the 
 
 ### Coloring Algorithm
 The coloring of the fractal is implemetned based on features of the music:
-\textbf{Mode:}
+Mode:
   Major: Converts all black to white
   Minor: Converts all white to black
 ## Valence:  
