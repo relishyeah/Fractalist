@@ -1,12 +1,9 @@
 # Fractalist
-Required Dependencies: Django RESTframework
 
-1. open command console
-2. cd to backend folder
+# Project Description
 
-3. To start the backend server, make sure the required dependencies are downloaded, if not, type in the command console:
+Creates a fractal Spotify playlist cover based on attributes of the music in a playlist, specifically valence, mode, and energy.
 
-"pip install djangorestframework"
-
-4. type in command console: "python manage.py runserver"
-5. server should be up at this point
+# APIs & Datasets
+* Spotify
+* Fractal (https://github.com/rafgraph/fractal)
