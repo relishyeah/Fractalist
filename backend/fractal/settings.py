@@ -82,15 +82,19 @@ WSGI_APPLICATION = 'fractal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'my_fractals',
+        'USER': 'postgres',
+        'PASSWORD': 'Friends31!',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
 CACHES = {
    'default': {
       'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-      'LOCATION': 'my_fractals',
+      'LOCATION': 'my_spotify',
    }
 }
 # Password validation
