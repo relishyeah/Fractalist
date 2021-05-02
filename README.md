@@ -31,17 +31,17 @@ The attributes displayed in the fractal
 The coloring of the fractal is implemented based on average values for features of the songs in a playlist:
 
 ### Mode:
-**Major:** converts all black to white
+**Major:** if the average modality of the playlist is 1, converts all black to white
   
-**Minor:** converts all white to black
+**Minor:** if the average modality of the playlist is 0, converts all white to black
   
 ### Valence:  
-**High valence:** warmer colors will be used
-**Low valence:** cooler colors will be used
+**High valence:** if the average valence is >= 0.5, warmer colors will be used
+**Low valence:** if the average valence is < 0.5, cooler colors will be used
 
 ### Energy:
-**High energy:** colors will be brighter
-**Low energy:** colors will be darker
+**High energy:** if the average energy is >= 0.5, colors will be brighter
+**Low energy:** if the average energy is < 0.5, colors will be darker
   
 # Usage
 1. User logs into their Spotify account
