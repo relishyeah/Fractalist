@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from .util import *
 import json
 
+BASE_URL = "http://127.0.0.1:8000/"
 
 class AuthURL(APIView):
     def get(self, request, fornat=None):
@@ -23,9 +24,9 @@ class AuthURL(APIView):
         return redirect(url)
 
 def spotify_callback(request, format=None):
-    code = request.GET.get('code')
+    code = str(request.GET.get('code'))
     print(code)
-    error = request.GET.get('error')
+    #error = request.GET.get('error')
 
     response = post('https://accounts.spotify.com/api/token', data={
         'grant_type': 'authorization_code',
@@ -39,7 +40,7 @@ def spotify_callback(request, format=None):
     token_type = response.get('token_type')
     refresh_token = response.get('refresh_token')
     expires_in = response.get('expires_in')
-    error = response.get('error')
+    #error = response.get('error')
 
     if not request.session.exists(request.session.session_key):
         request.session.create()
@@ -53,13 +54,12 @@ def spotify_callback(request, format=None):
 class IsAuthenticated(APIView):
     def get(self, request, format=None):
         is_authenticated = is_spotify_authenticated(
-            self.request.session.session_key)
-        return Response({'status': is_authenticated},[
-        ('Content-Type', 'application/json'),
-        ('Access-Control-Allow-Origin', '*'),
-        ('Access-Control-Allow-Headers', 'Authorization, Content-Type'),
-        ('Access-Control-Allow-Methods', 'POST'),
-      ], status=status.HTTP_200_OK)
+            self.request.session.session_key) 
+        headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET'
+        }
+        return Response({'status': is_authenticated},headers = headers, status=status.HTTP_200_OK)
 
 class GetPlaylists(APIView):
     playlist_ids=[0]
@@ -67,14 +67,13 @@ class GetPlaylists(APIView):
         key = self.request.session.session_key
         endpoint = 'me/playlists'
         response = execute_spotify_api_request(key,endpoint)
-        num_playlists = len(response['items']) # TODO: to be used for getting playlist id for all playlists
+        #num_playlists = len(response['items']) # TODO: to be used for getting playlist id for all playlists
         self.playlist_ids[0] = response['items'][0]['id']
-        return Response(response, [
-        ('Content-Type', 'application/json'),
-        ('Access-Control-Allow-Origin', '*'),
-        ('Access-Control-Allow-Headers', 'Authorization, Content-Type'),
-        ('Access-Control-Allow-Methods', 'GET'),
-      ], status = status.HTTP_200_OK)
+        headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET'
+        }
+        return Response(response, headers = headers, status=status.HTTP_200_OK)
 
 class GetTracks(GetPlaylists):
     def get(self,request,format = None):
