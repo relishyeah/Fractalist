@@ -34,20 +34,22 @@ The attributes displayed in the fractal
 
 
 ## Coloring Algorithm
-The coloring of the fractal is implemented based on average values for features of the songs in a playlist:
+The coloring of the fractal is implemented based rgb values and average values for features of the songs in a playlist:
 
 ### Mode:
-**Major:** if the average modality of the playlist is 1, converts all black to white
+**Major:** if the average modality of the playlist is 1, converts all black to white ([0,0,0] to [255,255,255])
   
-**Minor:** if the average modality of the playlist is 0, converts all white to black
+**Minor:** if the average modality of the playlist is 0, converts all white to black ([255,255,255] to [0,0,0])
   
 ### Valence:  
-**High valence:** if the average valence is >= 0.5, warmer colors will be used
-**Low valence:** if the average valence is < 0.5, cooler colors will be used
+**High valence:** if the average valence is >= 0.5, warmer colors will be used (higher red values and lower blue values)
+
+**Low valence:** if the average valence is < 0.5, cooler colors will be used (higher blue values and lower red values)
 
 ### Energy:
-**High energy:** if the average energy is >= 0.5, colors will be brighter
-**Low energy:** if the average energy is < 0.5, colors will be darker
+**High energy:** if the average energy is >= 0.5, colors will be brighter (rbg values > 127)
+
+**Low energy:** if the average energy is < 0.5, colors will be darker (rgb values <= 127)
   
 
 
