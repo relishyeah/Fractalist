@@ -25,10 +25,10 @@ SECRET_KEY = 'le%+hw+4r3v-(x@x_$j!l!28w#xar4fbm1$b5=b!r%+s+u3f$='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.12.147.218','127.0.0.1']
+ALLOWED_HOSTS = ['fractalist.herokuapp.com','127.0.0.1']
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 # Application definition
 
