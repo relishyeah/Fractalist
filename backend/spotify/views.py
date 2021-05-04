@@ -25,7 +25,6 @@ class AuthURL(APIView):
 
 def spotify_callback(request, format=None):
     code = str(request.GET.get('code'))
-    print(code)
     #error = request.GET.get('error')
 
     response = post('https://accounts.spotify.com/api/token', data={
@@ -35,6 +34,9 @@ def spotify_callback(request, format=None):
         'client_id': CLIENT_ID,
         'client_secret': CLIENT_SECRET
     }).json()
+    print()
+    print(response)
+    print()
 
     access_token = response.get('access_token')
     token_type = response.get('token_type')
@@ -48,7 +50,7 @@ def spotify_callback(request, format=None):
     update_or_create_user_tokens(
         request.session.session_key, access_token, token_type, expires_in, refresh_token)
     
-    return redirect('http://quence-dev.github.io/fractalist/playlist.html')
+    return redirect('http://127.0.0.1:5500/frontend/playlist.html')
 
 
 class IsAuthenticated(APIView):

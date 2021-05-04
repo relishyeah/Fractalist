@@ -25,10 +25,10 @@ SECRET_KEY = 'le%+hw+4r3v-(x@x_$j!l!28w#xar4fbm1$b5=b!r%+s+u3f$='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.12.147.218','127.0.0.1']
+ALLOWED_HOSTS = ['fractalist.herokuapp.com','127.0.0.1']
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    #'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.cache.UpdateCacheMiddleware',
@@ -82,15 +83,19 @@ WSGI_APPLICATION = 'fractal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'my_fractals',
+        'USER': 'postgres',
+        'PASSWORD': 'Friends31!',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
 CACHES = {
    'default': {
       'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-      'LOCATION': 'my_fractals',
+      'LOCATION': 'my_spotify',
    }
 }
 # Password validation
@@ -130,3 +135,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
