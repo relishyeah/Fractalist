@@ -1,4 +1,4 @@
-# Fractalist
+# Fractalist (Group 14)
 
 # Project Description
 
