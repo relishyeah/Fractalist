@@ -18,7 +18,6 @@ This repository contains the backend of Fractalist. The frontend repository can 
 
 # Databases
 * Postgres
-* 
 
 # Implementation
 
