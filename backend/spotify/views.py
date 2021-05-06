@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from requests import Request, post
 from rest_framework import status
 from rest_framework.response import Response
-from .util import *
+from .util import * 
 import json
 
 BASE_URL = "http://127.0.0.1:8000/"
