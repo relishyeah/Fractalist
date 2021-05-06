@@ -1,22 +1,23 @@
 Use Case 3: Athlete wants to distinguish playlists for workouts
 Primary Actor: Athlete
-Use Case Overview: The Athlete wants to know the general energy level and valence of their Spotify playlists so they can choose a one that matches the intensity of their workout. They open a web browser, log in with their Spotify account, and generate fractals for all their playlists.
+Use Case Overview: The Athlete wants to know the general energy level and valence of their Spotify playlists so they can choose a one that matches the intensity of their workout. They open Fractalist in a web browser, logs in with their Spotify account, and generates fractals for all their playlists.
 Trigger: The Athlete wants to know the energy level and valence of all their playlists
 Precondition 1: The athlete has access to a Spotify account
 Precondition 2: The athlete has at least one playlist in their Spotify library
  
 Basic Flow: 
 Description: This scenario describes the situation where a user, in our case an Athlete, wants to classify their playlists. This is our main success scenario.
-1. Athlete logs in using their Spotify account
-2. Athlete generates fractals for all playlists in their library
-3. Athlete opens Spotify, and compares the colors and shades of their playlist covers to determine which one is most suitable for their workout.
+1. Athlete logs into Fractalist using their Spotify account
+2. Athlete generates a fractal for a selected playlist
+3. Athlete publishes the playlist cover onto Spotify
+4. Athlete repeats steps 2-3 for all playlists
+5. Athlete opens Spotify, and compares the colors and shades of their playlist covers to determine which one is most suitable for their workout.
 Termination outcome: Athlete chooses a suitable playlist for their workout
-
-
-
 
 Alternative Flow 3: 
 Description: This describes the case where the Athlete did not create all the playlists in their library
-1. Athlete looks at all the created fractals and compares the colors and shades of their playlist covers to determine which one is most suitable for their workout.
-5. Athlete chooses a playlist cover and finds corresponding playlist on Spotify
+3. Athlete downloads generated fractal
+4. Athlete repeats steps 2-3 for all playlists
+5. Athlete looks at all the downloaded fractals and compares the colors and shades of their playlist covers to determine which one is most suitable for their workout.
+4. Athlete chooses a playlist cover and finds the corresponding playlist on Spotify
 Termination outcome: The Athlete chooses a suitable playlist for their workout

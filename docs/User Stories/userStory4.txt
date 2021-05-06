@@ -1,13 +1,15 @@
 Use Case 4: Sad college student wants to listen to sad music
 Primary Actor: College student
-Use Case Overview: The college student is sad, and wants to listen to the saddest playlist they created on Spotify. They are too sad to click into the playlists or read lengthy playlist titles. Instead, they choose the playlist with darker shades and cool tone colors since it represents a low energy, minor mode, lower valence playlist. They open a web browser, log in with their Spotify account, and generate a fractal for a playlist representing their music.
+Use Case Overview: The college student is sad, and wants to listen to the saddest playlist they created on Spotify. They are too sad to click into the playlists or read lengthy playlist titles. Instead, they choose the playlist with darker shades and cool tone colors since it represents a low energy, minor mode, lower valence playlist. They open Fractalist in a web browser, logs in with their Spotify account, and generates fractals for all their playlists.
 Trigger: The college student is sad
 Precondition 1: The college student has access to a Spotify account
 Precondition 2: The college student has created at least one Spotify playlist
  
 Basic Flow: 
 Description: This scenario describes the situation where a user, in our case a college student, wants to change their Spotify playlist covers. This is our main success scenario.
-1. College student logs in using their Spotify account
-2. College student generates fractals for all playlists in their library
-3. College student opens Spotify, and compares the colors and shades of the playlist covers to determine which one is most suitable for their breakdown.
+1. College student logs into Fractalist using their Spotify account
+2. College student generates a fractal for a selected playlist
+3. College student publishes the playlist cover onto Spotify
+4. College student repeats steps 2-3 for all playlists
+5. College student opens Spotify, and compares the colors and shades of the playlist covers to determine which one is most suitable for their breakdown.
 Termination outcome: College student chooses a suitable playlist for their emotions

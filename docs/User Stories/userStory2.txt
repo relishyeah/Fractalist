@@ -1,14 +1,13 @@
 Use Case 2: Musician wants to visualize their music
 Primary Actor: Musician
-Use Case Overview: The musician wants to create a visually appealing album cover/program image for an upcoming performance that reflects their music’s general energy, valence, and mode. They open a web browser, log in with their Spotify account, and generate a fractal for a playlist representing their music. The musician saves the generated fractal, and can use the image as an album cover or program image.
+Use Case Overview: The musician wants to create a visually appealing album cover or program image for an upcoming performance that reflects their music’s general energy, valence, and mode. They open Fractalist in a web browser, logs in with their Spotify account, and generates a fractal for a playlist representing their music. The musician downloads the generated fractal, and can use the image as an album cover or program image.
 Trigger: The musician wants a visualization of their music
 Precondition 1: The musician has access to a Spotify account
 Precondition 2: The musician has a playlist that represents their music in their Spotify library
 
-
 Basic Flow: 
 Description: This scenario describes the situation where a user, in our case a musician, wants to visualize a Spotify playlist of their music. This is our main success scenario.
-1. Musician logs in using their Spotify account
-2. Musician generates fractal for their specified playlist
-3. Musician saves generated fractal to their photos
+1. Musician logs into Fractlist using their Spotify account
+2. Musician generates a fractal for their specified playlist
+3. Musician downloads generated fractal
 Termination outcome: Musician’s music visualization has been created

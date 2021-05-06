@@ -1,25 +1,28 @@
 Use Case 1: Teenager wants a new Spotify playlist cover
 Primary Actor: Teenager
-Use Case Overview: The teenager doesn’t like the generic Spotify playlist covers and wants to change them into something that looks cool yet has meaning. They open a web browser, log in with their Spotify account, and generate fractals for chosen playlists.
+Use Case Overview: The teenager doesn’t like the generic Spotify playlist covers and wants to change them into something that looks cool yet has meaning. They open Fractalist in a web browser, logs in with their Spotify account, and generates fractals for select playlists.
 Trigger: The teenager does not like their Spotify playlist covers
 Precondition 1: The teenager uses a Spotify account
 Precondition 2: The teenager has created at least one playlist on the Spotify account
  
 Basic Flow: 
 Description: This scenario describes the situation where a user, in our case a teenager, wants to change their Spotify playlist covers. This is our main success scenario.
-1. Teenager logs in using their Spotify account
-2. Teenager generates fractals for selected playlists
-Termination outcome: Teenager’s created playlist covers have been changed
+1. Teenager logs into Fractalist using their Spotify account
+2. Teenager generates a fractal for a selected playlist
+3. Teenager publishes the playlist cover onto Spotify
+4. Teenager repeats steps 2-3 for select playlists
+Termination outcome: Teenager’s selected playlist covers have been changed
  
 Alternative Flow 1: 
-Description: This describes the case where the teenager is using a shared Spotify account and does not have access to the login info (possibly linked to someone’s person’s personal account)
-1. Teenager asks another account holder to log in using their Spotify account
-2. Account holder selects playlists to create fractals for
-3. Account holder saves generated fractal(s) and sends to teenager
-4. Teenager opens Spotify and replaces playlist covers with corresponding fractals
-Termination outcome: Teenager’s specified Spotify playlist covers have been changed
+Description: This describes the case where the teenager is using a shared Spotify account and does not have access to the login info (possibly linked to someone's personal account)
+1. Teenager asks another account holder to log into Fractalist
+2. Account holder selects a playlist to create a fractal for
+3. Account publishes the playlist cover onto Spotify
+4. Account holder repeats steps 2-3 for select playlists
+Termination outcome: Teenager’s selected playlist covers have been changed
  
 Alternative Flow 2:
 Description: This describes the case where the teenager just added/removed a song from a playlist with a fractal cover
-1. Teenager selects the updated playlist to create a fractal
-Termination outcome: Teenager’s specified Spotify playlist cover has been updated
+2. Teenager selects the updated playlist to create a fractal
+3. Teenager publishes playlist cover onto Spotify
+Termination outcome: Teenager’s chosen playlist cover has been updated
