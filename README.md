@@ -54,5 +54,6 @@ The coloring of the fractal is implemented based rgb values and average values f
 **Low energy:** if the average energy is < 0.5, colors will be darker (rgb values <= 127)
   
 
+## Project start date: April 10, 2021
 
 
