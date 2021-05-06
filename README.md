@@ -2,14 +2,14 @@
 
 # Project Description
 
-The project creates a fractal Spotify playlist cover based on attributes of the music in a playlist, specifically valence, mode, and energy. Users would also be able to customize the cover by modifying various elements such as font and color. The fractal image can then be downloaded to the user’s device or automatically uploaded to Spotify.
+The project creates a fractal Spotify playlist cover based on attributes of the music in a playlist, specifically valence, mode, and energy. Users would also be able to customize the cover by modifying various elements such as font and color. The fractal image can then be downloaded to the user’s device or automatically publish to Spotify.
 
 Frontend design by Spencer Vilicic & Nick Mohler. Visit the [frontend GitHub repository.](https://github.com/quence-dev/fractalist)
 
 # Usage
 1. User logs into their Spotify account
-2. User selects playlist(s) in their library to create fractal(s)
-3. User downloads fractal(s) and/or changes their Spotify playlist cover(s)
+2. User selects a playlist in their library to create a fractal
+3. User downloads fractal and/or publishes their Spotify playlist cover
 
 
 # APIs
