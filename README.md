@@ -1,4 +1,4 @@
-# Fractalist (Group 14)
+# [Fractalist](https://quence-dev.github.io/fractalist) (Group 14)
 
 # Project Description
 
